@@ -1,0 +1,406 @@
+{
+  "version": "v2",
+  "type": "pixel_layers",
+  "mode": "cumulative",
+  "description": "Frames cumulativos de Forest Loss + Forest Extent para o Rio Grande do Sul.",
+  "crs": "EPSG:4326",
+  "web_size": {
+    "width": 2200,
+    "height": 1844
+  },
+  "bounds": {
+    "left": -57.64975,
+    "bottom": -33.75125,
+    "right": -49.6915,
+    "top": -27.082250000000002
+  },
+  "bounds_leaflet": [
+    [
+      -33.75125,
+      -57.64975
+    ],
+    [
+      -27.082250000000002,
+      -49.6915
+    ]
+  ],
+  "animation": {
+    "years": [
+      2001,
+      2002,
+      2003,
+      2004,
+      2005,
+      2006,
+      2007,
+      2008,
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "recommended_duration_ms": 350,
+    "note": "Quanto maior o duration_ms, mais lenta a animação."
+  },
+  "visualization": {
+    "forest_extent": "#00BE1E",
+    "forest_loss": "#FF0020",
+    "below_threshold": "#070908",
+    "outside_rs": "transparent",
+    "loss_highlight_radius_web_pixels": 1,
+    "note": "O realce da perda é exclusivamente cartográfico e não altera os cálculos analíticos."
+  },
+  "loss_extent_cumulative": {
+    "10": {
+      "label": "Forest Loss acumulado + Forest Extent | ≥10%",
+      "threshold": 10,
+      "folder": "pixels/loss_extent_cumulative_v2/10pct",
+      "gif_preview": "pixels/loss_extent_cumulative_v2/gifs/loss_extent_cumulative_10pct_preview.gif",
+      "frames": [
+        {
+          "year": 2001,
+          "image": "pixels/loss_extent_cumulative_v2/10pct/loss_extent_cumulative_10pct_2001.png"
+        },
+        {
+          "year": 2002,
+          "image": "pixels/loss_extent_cumulative_v2/10pct/loss_extent_cumulative_10pct_2002.png"
+        },
+        {
+          "year": 2003,
+          "image": "pixels/loss_extent_cumulative_v2/10pct/loss_extent_cumulative_10pct_2003.png"
+        },
+        {
+          "year": 2004,
+          "image": "pixels/loss_extent_cumulative_v2/10pct/loss_extent_cumulative_10pct_2004.png"
+        },
+        {
+          "year": 2005,
+          "image": "pixels/loss_extent_cumulative_v2/10pct/loss_extent_cumulative_10pct_2005.png"
+        },
+        {
+          "year": 2006,
+          "image": "pixels/loss_extent_cumulative_v2/10pct/loss_extent_cumulative_10pct_2006.png"
+        },
+        {
+          "year": 2007,
+          "image": "pixels/loss_extent_cumulative_v2/10pct/loss_extent_cumulative_10pct_2007.png"
+        },
+        {
+          "year": 2008,
+          "image": "pixels/loss_extent_cumulative_v2/10pct/loss_extent_cumulative_10pct_2008.png"
+        },
+        {
+          "year": 2009,
+          "image": "pixels/loss_extent_cumulative_v2/10pct/loss_extent_cumulative_10pct_2009.png"
+        },
+        {
+          "year": 2010,
+          "image": "pixels/loss_extent_cumulative_v2/10pct/loss_extent_cumulative_10pct_2010.png"
+        },
+        {
+          "year": 2011,
+          "image": "pixels/loss_extent_cumulative_v2/10pct/loss_extent_cumulative_10pct_2011.png"
+        },
+        {
+          "year": 2012,
+          "image": "pixels/loss_extent_cumulative_v2/10pct/loss_extent_cumulative_10pct_2012.png"
+        },
+        {
+          "year": 2013,
+          "image": "pixels/loss_extent_cumulative_v2/10pct/loss_extent_cumulative_10pct_2013.png"
+        },
+        {
+          "year": 2014,
+          "image": "pixels/loss_extent_cumulative_v2/10pct/loss_extent_cumulative_10pct_2014.png"
+        },
+        {
+          "year": 2015,
+          "image": "pixels/loss_extent_cumulative_v2/10pct/loss_extent_cumulative_10pct_2015.png"
+        },
+        {
+          "year": 2016,
+          "image": "pixels/loss_extent_cumulative_v2/10pct/loss_extent_cumulative_10pct_2016.png"
+        },
+        {
+          "year": 2017,
+          "image": "pixels/loss_extent_cumulative_v2/10pct/loss_extent_cumulative_10pct_2017.png"
+        },
+        {
+          "year": 2018,
+          "image": "pixels/loss_extent_cumulative_v2/10pct/loss_extent_cumulative_10pct_2018.png"
+        },
+        {
+          "year": 2019,
+          "image": "pixels/loss_extent_cumulative_v2/10pct/loss_extent_cumulative_10pct_2019.png"
+        },
+        {
+          "year": 2020,
+          "image": "pixels/loss_extent_cumulative_v2/10pct/loss_extent_cumulative_10pct_2020.png"
+        },
+        {
+          "year": 2021,
+          "image": "pixels/loss_extent_cumulative_v2/10pct/loss_extent_cumulative_10pct_2021.png"
+        },
+        {
+          "year": 2022,
+          "image": "pixels/loss_extent_cumulative_v2/10pct/loss_extent_cumulative_10pct_2022.png"
+        },
+        {
+          "year": 2023,
+          "image": "pixels/loss_extent_cumulative_v2/10pct/loss_extent_cumulative_10pct_2023.png"
+        },
+        {
+          "year": 2024,
+          "image": "pixels/loss_extent_cumulative_v2/10pct/loss_extent_cumulative_10pct_2024.png"
+        },
+        {
+          "year": 2025,
+          "image": "pixels/loss_extent_cumulative_v2/10pct/loss_extent_cumulative_10pct_2025.png"
+        }
+      ]
+    },
+    "30": {
+      "label": "Forest Loss acumulado + Forest Extent | ≥30%",
+      "threshold": 30,
+      "folder": "pixels/loss_extent_cumulative_v2/30pct",
+      "gif_preview": "pixels/loss_extent_cumulative_v2/gifs/loss_extent_cumulative_30pct_preview.gif",
+      "frames": [
+        {
+          "year": 2001,
+          "image": "pixels/loss_extent_cumulative_v2/30pct/loss_extent_cumulative_30pct_2001.png"
+        },
+        {
+          "year": 2002,
+          "image": "pixels/loss_extent_cumulative_v2/30pct/loss_extent_cumulative_30pct_2002.png"
+        },
+        {
+          "year": 2003,
+          "image": "pixels/loss_extent_cumulative_v2/30pct/loss_extent_cumulative_30pct_2003.png"
+        },
+        {
+          "year": 2004,
+          "image": "pixels/loss_extent_cumulative_v2/30pct/loss_extent_cumulative_30pct_2004.png"
+        },
+        {
+          "year": 2005,
+          "image": "pixels/loss_extent_cumulative_v2/30pct/loss_extent_cumulative_30pct_2005.png"
+        },
+        {
+          "year": 2006,
+          "image": "pixels/loss_extent_cumulative_v2/30pct/loss_extent_cumulative_30pct_2006.png"
+        },
+        {
+          "year": 2007,
+          "image": "pixels/loss_extent_cumulative_v2/30pct/loss_extent_cumulative_30pct_2007.png"
+        },
+        {
+          "year": 2008,
+          "image": "pixels/loss_extent_cumulative_v2/30pct/loss_extent_cumulative_30pct_2008.png"
+        },
+        {
+          "year": 2009,
+          "image": "pixels/loss_extent_cumulative_v2/30pct/loss_extent_cumulative_30pct_2009.png"
+        },
+        {
+          "year": 2010,
+          "image": "pixels/loss_extent_cumulative_v2/30pct/loss_extent_cumulative_30pct_2010.png"
+        },
+        {
+          "year": 2011,
+          "image": "pixels/loss_extent_cumulative_v2/30pct/loss_extent_cumulative_30pct_2011.png"
+        },
+        {
+          "year": 2012,
+          "image": "pixels/loss_extent_cumulative_v2/30pct/loss_extent_cumulative_30pct_2012.png"
+        },
+        {
+          "year": 2013,
+          "image": "pixels/loss_extent_cumulative_v2/30pct/loss_extent_cumulative_30pct_2013.png"
+        },
+        {
+          "year": 2014,
+          "image": "pixels/loss_extent_cumulative_v2/30pct/loss_extent_cumulative_30pct_2014.png"
+        },
+        {
+          "year": 2015,
+          "image": "pixels/loss_extent_cumulative_v2/30pct/loss_extent_cumulative_30pct_2015.png"
+        },
+        {
+          "year": 2016,
+          "image": "pixels/loss_extent_cumulative_v2/30pct/loss_extent_cumulative_30pct_2016.png"
+        },
+        {
+          "year": 2017,
+          "image": "pixels/loss_extent_cumulative_v2/30pct/loss_extent_cumulative_30pct_2017.png"
+        },
+        {
+          "year": 2018,
+          "image": "pixels/loss_extent_cumulative_v2/30pct/loss_extent_cumulative_30pct_2018.png"
+        },
+        {
+          "year": 2019,
+          "image": "pixels/loss_extent_cumulative_v2/30pct/loss_extent_cumulative_30pct_2019.png"
+        },
+        {
+          "year": 2020,
+          "image": "pixels/loss_extent_cumulative_v2/30pct/loss_extent_cumulative_30pct_2020.png"
+        },
+        {
+          "year": 2021,
+          "image": "pixels/loss_extent_cumulative_v2/30pct/loss_extent_cumulative_30pct_2021.png"
+        },
+        {
+          "year": 2022,
+          "image": "pixels/loss_extent_cumulative_v2/30pct/loss_extent_cumulative_30pct_2022.png"
+        },
+        {
+          "year": 2023,
+          "image": "pixels/loss_extent_cumulative_v2/30pct/loss_extent_cumulative_30pct_2023.png"
+        },
+        {
+          "year": 2024,
+          "image": "pixels/loss_extent_cumulative_v2/30pct/loss_extent_cumulative_30pct_2024.png"
+        },
+        {
+          "year": 2025,
+          "image": "pixels/loss_extent_cumulative_v2/30pct/loss_extent_cumulative_30pct_2025.png"
+        }
+      ]
+    },
+    "50": {
+      "label": "Forest Loss acumulado + Forest Extent | ≥50%",
+      "threshold": 50,
+      "folder": "pixels/loss_extent_cumulative_v2/50pct",
+      "gif_preview": "pixels/loss_extent_cumulative_v2/gifs/loss_extent_cumulative_50pct_preview.gif",
+      "frames": [
+        {
+          "year": 2001,
+          "image": "pixels/loss_extent_cumulative_v2/50pct/loss_extent_cumulative_50pct_2001.png"
+        },
+        {
+          "year": 2002,
+          "image": "pixels/loss_extent_cumulative_v2/50pct/loss_extent_cumulative_50pct_2002.png"
+        },
+        {
+          "year": 2003,
+          "image": "pixels/loss_extent_cumulative_v2/50pct/loss_extent_cumulative_50pct_2003.png"
+        },
+        {
+          "year": 2004,
+          "image": "pixels/loss_extent_cumulative_v2/50pct/loss_extent_cumulative_50pct_2004.png"
+        },
+        {
+          "year": 2005,
+          "image": "pixels/loss_extent_cumulative_v2/50pct/loss_extent_cumulative_50pct_2005.png"
+        },
+        {
+          "year": 2006,
+          "image": "pixels/loss_extent_cumulative_v2/50pct/loss_extent_cumulative_50pct_2006.png"
+        },
+        {
+          "year": 2007,
+          "image": "pixels/loss_extent_cumulative_v2/50pct/loss_extent_cumulative_50pct_2007.png"
+        },
+        {
+          "year": 2008,
+          "image": "pixels/loss_extent_cumulative_v2/50pct/loss_extent_cumulative_50pct_2008.png"
+        },
+        {
+          "year": 2009,
+          "image": "pixels/loss_extent_cumulative_v2/50pct/loss_extent_cumulative_50pct_2009.png"
+        },
+        {
+          "year": 2010,
+          "image": "pixels/loss_extent_cumulative_v2/50pct/loss_extent_cumulative_50pct_2010.png"
+        },
+        {
+          "year": 2011,
+          "image": "pixels/loss_extent_cumulative_v2/50pct/loss_extent_cumulative_50pct_2011.png"
+        },
+        {
+          "year": 2012,
+          "image": "pixels/loss_extent_cumulative_v2/50pct/loss_extent_cumulative_50pct_2012.png"
+        },
+        {
+          "year": 2013,
+          "image": "pixels/loss_extent_cumulative_v2/50pct/loss_extent_cumulative_50pct_2013.png"
+        },
+        {
+          "year": 2014,
+          "image": "pixels/loss_extent_cumulative_v2/50pct/loss_extent_cumulative_50pct_2014.png"
+        },
+        {
+          "year": 2015,
+          "image": "pixels/loss_extent_cumulative_v2/50pct/loss_extent_cumulative_50pct_2015.png"
+        },
+        {
+          "year": 2016,
+          "image": "pixels/loss_extent_cumulative_v2/50pct/loss_extent_cumulative_50pct_2016.png"
+        },
+        {
+          "year": 2017,
+          "image": "pixels/loss_extent_cumulative_v2/50pct/loss_extent_cumulative_50pct_2017.png"
+        },
+        {
+          "year": 2018,
+          "image": "pixels/loss_extent_cumulative_v2/50pct/loss_extent_cumulative_50pct_2018.png"
+        },
+        {
+          "year": 2019,
+          "image": "pixels/loss_extent_cumulative_v2/50pct/loss_extent_cumulative_50pct_2019.png"
+        },
+        {
+          "year": 2020,
+          "image": "pixels/loss_extent_cumulative_v2/50pct/loss_extent_cumulative_50pct_2020.png"
+        },
+        {
+          "year": 2021,
+          "image": "pixels/loss_extent_cumulative_v2/50pct/loss_extent_cumulative_50pct_2021.png"
+        },
+        {
+          "year": 2022,
+          "image": "pixels/loss_extent_cumulative_v2/50pct/loss_extent_cumulative_50pct_2022.png"
+        },
+        {
+          "year": 2023,
+          "image": "pixels/loss_extent_cumulative_v2/50pct/loss_extent_cumulative_50pct_2023.png"
+        },
+        {
+          "year": 2024,
+          "image": "pixels/loss_extent_cumulative_v2/50pct/loss_extent_cumulative_50pct_2024.png"
+        },
+        {
+          "year": 2025,
+          "image": "pixels/loss_extent_cumulative_v2/50pct/loss_extent_cumulative_50pct_2025.png"
+        }
+      ]
+    }
+  },
+  "gain_extent_static": {
+    "10": {
+      "label": "Gain + Extent | ≥10%",
+      "image": "pixels/gain_extent/gain_extent_10pct.png"
+    },
+    "30": {
+      "label": "Gain + Extent | ≥30%",
+      "image": "pixels/gain_extent/gain_extent_30pct.png"
+    },
+    "50": {
+      "label": "Gain + Extent | ≥50%",
+      "image": "pixels/gain_extent/gain_extent_50pct.png"
+    }
+  }
+}
