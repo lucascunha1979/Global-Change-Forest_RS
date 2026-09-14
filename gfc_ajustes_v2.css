@@ -1,0 +1,222 @@
+
+
+/* ==========================================================
+   BLOCO 4J
+   MAPA MUNICIPAL + DIDÁTICA
+   ========================================================== */
+
+
+/* ==========================================================
+   CONTROLES CARTOGRÁFICOS
+   ========================================================== */
+
+.municipal-map-control {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        7px;
+}
+
+
+.municipal-map-control label {
+
+    font-size:
+        12px;
+
+    color:
+        #667169;
+
+    font-weight:
+        700;
+}
+
+
+.opacity-row {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 45px;
+
+    gap:
+        8px;
+
+    align-items:
+        center;
+
+    height:
+        42px;
+}
+
+
+#municipalOpacityRange {
+
+    width:
+        100%;
+
+    accent-color:
+        #1f7a52;
+}
+
+
+#municipalOpacityValue {
+
+    text-align:
+        center;
+
+    padding:
+        4px 5px;
+
+    background:
+        #e5f3ea;
+
+    color:
+        #14573b;
+
+    border-radius:
+        7px;
+
+    font-size:
+        10px;
+
+    font-weight:
+        800;
+}
+
+
+/* ==========================================================
+   MAPA
+   ========================================================== */
+
+#map {
+
+    background:
+        #e8ece9;
+}
+
+
+/*
+Garante que os tiles fiquem atrás dos polígonos.
+*/
+
+.leaflet-pane.municipal-basemap-pane {
+
+    z-index:
+        150 !important;
+}
+
+
+/* ==========================================================
+   NOVO TEXTO DIDÁTICO
+   ========================================================== */
+
+.gfc-definition-example {
+
+    display:
+        block;
+
+    margin-top:
+        8px;
+
+    padding:
+        8px 9px;
+
+    background:
+        #eef6f0;
+
+    border-radius:
+        7px;
+
+    color:
+        #405349;
+
+    font-size:
+        10.5px;
+
+    line-height:
+        1.45;
+}
+
+
+.gfc-definition-example strong {
+
+    color:
+        #14573b;
+}
+
+
+/* ==========================================================
+   DESTAQUE PARA A EXPLICAÇÃO DO LIMIAR
+   ========================================================== */
+
+.threshold-explainer {
+
+    font-size:
+        12px !important;
+
+    line-height:
+        1.65 !important;
+
+    border-left-width:
+        5px !important;
+}
+
+
+.threshold-explainer .limiar-rule {
+
+    display:
+        block;
+
+    margin-top:
+        7px;
+
+    font-weight:
+        750;
+
+    color:
+        #14573b;
+}
+
+
+/* ==========================================================
+   NOTA CURTA
+   ========================================================== */
+
+.gfc-simple-note {
+
+    margin-top:
+        8px;
+
+    color:
+        #667169;
+
+    font-size:
+        10px;
+
+    line-height:
+        1.45;
+}
+
+
+/* ==========================================================
+   RESPONSIVO
+   ========================================================== */
+
+@media (
+    max-width: 760px
+) {
+
+    .opacity-row {
+
+        grid-template-columns:
+            1fr 50px;
+
+    }
+
+}

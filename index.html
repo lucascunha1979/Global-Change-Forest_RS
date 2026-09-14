@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+Global Forest Change — Rio Grande do Sul
+</title>
+
+<!-- Leaflet -->
+<link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+/>
+
+<!-- CSS -->
+<link
+    rel="stylesheet"
+    href="style.css"
+/>
+
+<link
+    rel="stylesheet"
+    href="pixel.css"
+/>
+
+
+<link
+    rel="stylesheet"
+    href="gfc_explicacao.css"
+/>
+
+
+<link
+    rel="stylesheet"
+    href="gfc_ajustes_v2.css"
+/>
+
+</head>
+
+
+
+
+<body>
+
+<!-- ===================================================== -->
+<!-- CABEÇALHO -->
+<!-- ===================================================== -->
+
+<header class="hero">
+
+    <div class="hero-inner">
+
+        <div class="hero-title">
+
+            <div class="eyebrow">
+                GLOBAL FOREST CHANGE
+            </div>
+
+            <h1>
+                Rio Grande do Sul
+            </h1>
+
+            <p>
+                Perda de cobertura arbórea entre 2001 e 2025
+            </p>
+
+        </div>
+
+        <div class="hero-source">
+
+            <span>
+                Hansen / UMD
+            </span>
+
+            <small>
+                Global Forest Change 2025 v1.13
+            </small>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ===================================================== -->
+<!-- CONTEÚDO -->
+<!-- ===================================================== -->
+
+<main class="dashboard">
+
+
+<!-- ===================================================== -->
+<!-- CONTROLES -->
+<!-- ===================================================== -->
+
+<section class="panel controls-panel">
+
+    <div class="section-heading">
+
+        <div>
+
+            <span class="section-kicker">
+                EXPLORAR
+            </span>
+
+            <h2>
+                Controles do painel
+            </h2>
+
+        </div>
+
+        <div
+            id="statusAno"
+            class="year-badge"
+        >
+            2025
+        </div>
+
+    </div>
+
+
+    <div class="controls-grid">
+
+        <!-- ANO -->
+
+        <div class="control-group control-year">
+
+            <label for="anoRange">
+                Ano
+            </label>
+
+            <input
+                id="anoRange"
+                type="range"
+                min="2001"
+                max="2025"
+                value="2025"
+                step="1"
+            >
+
+            <div class="range-labels">
+
+                <span>
+                    2001
+                </span>
+
+                <span id="anoSelecionado">
+                    2025
+                </span>
+
+                <span>
+                    2025
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- PLAY -->
+
+        <div class="control-group compact">
+
+            <label>
+                Animação
+            </label>
+
+            <button
+                id="playButton"
+                class="play-button"
+            >
+                ▶ Reproduzir
+            </button>
+
+        </div>
+
+
+        <!-- LIMIAR -->
+
+        <div class="control-group">
+
+            <label for="limiarSelect">
+                Cobertura arbórea em 2000
+            </label>
+
+            <select id="limiarSelect">
+
+                <option value="10" selected>
+                    ≥ 10%
+                </option>
+
+                <option value="30">
+                    ≥ 30%
+                </option>
+
+                <option value="50">
+                    ≥ 50%
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- MODO -->
+
+        <div class="control-group">
+
+            <label for="modoSelect">
+                Período
+            </label>
+
+            <select id="modoSelect">
+
+                <option value="anual">
+                    Apenas o ano
+                </option>
+
+                <option value="acumulado" selected>
+                    Acumulado até o ano
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- MEDIDA -->
+
+        <div class="control-group">
+
+            <label for="medidaSelect">
+                Medida do mapa
+            </label>
+
+            <select id="medidaSelect">
+
+                <option value="ha">
+                    Hectares
+                </option>
+
+                <option value="km2">
+                    km²
+                </option>
+
+                <option value="pct" selected>
+                    % da área municipal
+                </option>
+
+            </select>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- CARDS -->
+<!-- ===================================================== -->
+
+<section class="cards-grid">
+
+    <article class="metric-card">
+
+        <span class="metric-label">
+            Perda no ano
+        </span>
+
+        <strong id="cardPerdaAno">
+            —
+        </strong>
+
+        <small id="cardPerdaAnoSub">
+            hectares
+        </small>
+
+    </article>
+
+
+    <article class="metric-card">
+
+        <span class="metric-label">
+            Perda acumulada
+        </span>
+
+        <strong id="cardAcumulado">
+            —
+        </strong>
+
+        <small id="cardAcumuladoSub">
+            2001–2025
+        </small>
+
+    </article>
+
+
+    <article class="metric-card">
+
+        <span class="metric-label">
+            Variação anual
+        </span>
+
+        <strong id="cardVariacao">
+            —
+        </strong>
+
+        <small>
+            em relação ao ano anterior
+        </small>
+
+    </article>
+
+
+    <article class="metric-card">
+
+        <span class="metric-label">
+            Municípios com perda
+        </span>
+
+        <strong id="cardMunicipios">
+            —
+        </strong>
+
+        <small>
+            de 497 municípios
+        </small>
+
+    </article>
+
+
+    <article class="metric-card">
+
+        <span class="metric-label">
+            Maior perda no ano
+        </span>
+
+        <strong
+            id="cardTopAno"
+            class="metric-name"
+        >
+            —
+        </strong>
+
+        <small id="cardTopAnoValor">
+            —
+        </small>
+
+    </article>
+
+
+    <article class="metric-card">
+
+        <span class="metric-label">
+            Maior acumulado
+        </span>
+
+        <strong
+            id="cardTopAcumulado"
+            class="metric-name"
+        >
+            —
+        </strong>
+
+        <small id="cardTopAcumuladoValor">
+            —
+        </small>
+
+    </article>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- MAPA MUNICIPAL -->
+<!-- ===================================================== -->
+
+<section class="panel map-panel">
+
+    <div class="section-heading">
+
+        <div>
+
+            <span class="section-kicker">
+                DISTRIBUIÇÃO ESPACIAL
+            </span>
+
+            <h2 id="tituloMapa">
+                Perda acumulada por município
+            </h2>
+
+        </div>
+
+        <div class="map-unit" id="mapUnit">
+            % da área municipal
+        </div>
+
+    </div>
+
+
+    <div class="map-layout">
+
+        <div id="map"></div>
+
+        <aside class="legend-panel">
+
+            <h3>
+                Classes
+            </h3>
+
+            <div id="legendContent"></div>
+
+            <div class="legend-note">
+
+                Classes calculadas por quantis
+                entre os municípios com valor
+                positivo no ano selecionado.
+
+            </div>
+
+        </aside>
+
+    </div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- GRÁFICOS -->
+<!-- ===================================================== -->
+
+<section class="charts-grid">
+
+    <article class="panel chart-panel">
+
+        <div class="section-heading">
+
+            <div>
+
+                <span class="section-kicker">
+                    SÉRIE TEMPORAL
+                </span>
+
+                <h2>
+                    Perda anual no estado
+                </h2>
+
+            </div>
+
+        </div>
+
+        <div
+            id="chartSerie"
+            class="chart"
+        ></div>
+
+    </article>
+
+
+    <article class="panel chart-panel">
+
+        <div class="section-heading">
+
+            <div>
+
+                <span class="section-kicker">
+                    MUNICÍPIOS
+                </span>
+
+                <h2 id="rankingTitle">
+                    Maiores valores
+                </h2>
+
+            </div>
+
+        </div>
+
+        <div
+            id="chartRanking"
+            class="chart"
+        ></div>
+
+    </article>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- MAPA DE PIXELS - PLACEHOLDER -->
+<!-- ===================================================== -->
+
+<section class="panel pixel-panel">
+
+    <div class="section-heading">
+
+        <div>
+
+            <span class="section-kicker">
+                ALTA RESOLUÇÃO
+            </span>
+
+            <h2>
+                Mudança em nível de pixel
+            </h2>
+
+        </div>
+
+        <span class="coming-badge">
+            próxima etapa
+        </span>
+
+    </div>
+
+
+    <div class="pixel-placeholder">
+
+        <div class="pixel-icon">
+            ▦
+        </div>
+
+        <div>
+
+            <h3>
+                Mapa raster de Forest Extent,
+                Forest Loss e Forest Gain
+            </h3>
+
+            <p>
+                Nesta área entraremos com os rasters
+                já produzidos na resolução nativa
+                de 0,00025°.
+            </p>
+
+            <p>
+                O mapa poderá acompanhar o ano
+                selecionado e reproduzir a evolução
+                espacial da perda entre 2001 e 2025.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- METODOLOGIA -->
+<!-- ===================================================== -->
+
+<section class="panel methodology">
+
+    <div class="section-heading">
+
+        <div>
+
+            <span class="section-kicker">
+                COMO LER
+            </span>
+
+            <h2>
+                Notas metodológicas
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <div class="method-grid">
+
+        <article>
+
+            <h3>
+                Cobertura arbórea
+            </h3>
+
+            <p>
+                Treecover2000 representa o percentual
+                de cobertura arbórea em cada pixel
+                no ano 2000.
+            </p>
+
+        </article>
+
+
+        <article>
+
+            <h3>
+                Forest Loss
+            </h3>
+
+            <p>
+                Lossyear identifica o ano em que
+                o GFC registrou perda de cobertura
+                arbórea entre 2001 e 2025.
+            </p>
+
+        </article>
+
+
+        <article>
+
+            <h3>
+                Limiar
+            </h3>
+
+            <p>
+                Os limiares 10%, 30% e 50%
+                restringem a análise aos pixels
+                cuja cobertura arbórea em 2000
+                era igual ou superior ao valor
+                selecionado.
+            </p>
+
+        </article>
+
+
+        <article>
+
+            <h3>
+                Interpretação
+            </h3>
+
+            <p>
+                Perda de cobertura arbórea segundo
+                o GFC não corresponde necessariamente
+                a desmatamento. O indicador também
+                pode registrar outros distúrbios
+                de substituição do dossel.
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <div>
+        Global Forest Change — Rio Grande do Sul
+    </div>
+
+    <div>
+        Fonte: Hansen / UMD Global Forest Change 2025 v1.13
+    </div>
+
+</footer>
+
+
+</main>
+
+
+<!-- ===================================================== -->
+<!-- BIBLIOTECAS -->
+<!-- ===================================================== -->
+
+<script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+</script>
+
+<script
+    src="https://cdn.plot.ly/plotly-2.35.2.min.js">
+</script>
+
+<script
+    src="app.js">
+</script>
+
+<script
+    src="pixel.js">
+</script>
+
+<script
+    src="municipal_methodology.js">
+</script>
+
+
+<script
+    src="gfc_explicacao.js">
+</script>
+
+
+<script
+    src="gfc_ajustes_v2.js">
+</script>
+
+</body>
+
+
+</html>
