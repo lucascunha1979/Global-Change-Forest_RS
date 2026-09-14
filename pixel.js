@@ -1333,9 +1333,9 @@ function initPixelMap() {
         L.tileLayer(
 
             (
-                "https://server.arcgisonline.com/"
-                "ArcGIS/rest/services/"
-                "World_Imagery/MapServer/"
+                "https://server.arcgisonline.com/" +
+                "ArcGIS/rest/services/" +
+                "World_Imagery/MapServer/" +
                 "tile/{z}/{y}/{x}"
             ),
 
@@ -2228,9 +2228,9 @@ function populatePixelMethodology() {
             "Treecover2000",
 
             (
-                "Percentual de cobertura do dossel "
-                "arbóreo no ano 2000. Os cenários "
-                "utilizados no painel aplicam limiares "
+                "Percentual de cobertura do dossel " +
+                "arbóreo no ano 2000. Os cenários " +
+                "utilizados no painel aplicam limiares " +
                 "de 10%, 30% ou 50%."
             )
         ],
@@ -2239,8 +2239,8 @@ function populatePixelMethodology() {
             "Lossyear",
 
             (
-                "Identifica o ano da perda detectada. "
-                "Os códigos 1 a 25 representam os anos "
+                "Identifica o ano da perda detectada. " +
+                "Os códigos 1 a 25 representam os anos " +
                 "de 2001 a 2025."
             )
         ],
@@ -2249,8 +2249,8 @@ function populatePixelMethodology() {
             "Perda acumulada",
 
             (
-                "Ao avançar o ano, permanecem em vermelho "
-                "todas as perdas observadas desde 2001 "
+                "Ao avançar o ano, permanecem em vermelho " +
+                "todas as perdas observadas desde 2001 " +
                 "até o ano selecionado."
             )
         ],
@@ -2259,8 +2259,8 @@ function populatePixelMethodology() {
             "Forest Gain",
 
             (
-                "Indicador binário de ganho de cobertura "
-                "arbórea no período 2000–2012. "
+                "Indicador binário de ganho de cobertura " +
+                "arbórea no período 2000–2012. " +
                 "Não informa o ano específico do ganho."
             )
         ],
@@ -2269,8 +2269,8 @@ function populatePixelMethodology() {
             "Área dos pixels",
 
             (
-                "Os cálculos utilizaram área real de pixel. "
-                "Não foi adotado um valor fixo de 900 m² "
+                "Os cálculos utilizaram área real de pixel. " +
+                "Não foi adotado um valor fixo de 900 m² " +
                 "para toda a grade."
             )
         ],
@@ -2279,8 +2279,8 @@ function populatePixelMethodology() {
             "Resolução",
 
             (
-                "Os rasters analíticos permanecem na grade "
-                "original de 0,00025°. Os PNGs do painel "
+                "Os rasters analíticos permanecem na grade " +
+                "original de 0,00025°. Os PNGs do painel " +
                 "são versões reduzidas apenas para exibição."
             )
         ],
@@ -2289,9 +2289,9 @@ function populatePixelMethodology() {
             "Realce cartográfico",
 
             (
-                "Na versão web os pixels de perda foram "
-                "ligeiramente realçados para permanecerem "
-                "visíveis na redução de resolução. "
+                "Na versão web os pixels de perda foram " +
+                "ligeiramente realçados para permanecerem " +
+                "visíveis na redução de resolução. " +
                 "Esse recurso não altera os cálculos."
             )
         ],
@@ -2300,9 +2300,9 @@ function populatePixelMethodology() {
             "Interpretação",
 
             (
-                "Forest Loss representa perda de cobertura "
-                "arbórea ou distúrbio de substituição do "
-                "dossel e não corresponde necessariamente "
+                "Forest Loss representa perda de cobertura " +
+                "arbórea ou distúrbio de substituição do " +
+                "dossel e não corresponde necessariamente " +
                 "a desmatamento."
             )
         ]
