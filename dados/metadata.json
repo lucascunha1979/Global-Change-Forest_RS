@@ -1,0 +1,50 @@
+{
+  "titulo": "Global Forest Change — Rio Grande do Sul",
+  "subtitulo": "Perda de cobertura arbórea 2001–2025",
+  "fonte": "Hansen/UMD Global Forest Change 2025 v1.13",
+  "anos": [
+    2001,
+    2002,
+    2003,
+    2004,
+    2005,
+    2006,
+    2007,
+    2008,
+    2009,
+    2010,
+    2011,
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "limiares": [
+    10,
+    30,
+    50
+  ],
+  "municipios": 497,
+  "arquivo_mapa": "mapa_municipios.geojson",
+  "arquivo_cards": "cards.json",
+  "arquivo_estado": "estado_serie.json",
+  "arquivo_ranking": "ranking_top20.json",
+  "arquivo_atributos_mapa": "mapa_atributos.json",
+  "notas": [
+    "Treecover2000 representa o percentual de cobertura arbórea no ano 2000 por pixel.",
+    "Lossyear indica o ano em que houve perda de cobertura arbórea.",
+    "Gain indica ganho de cobertura arbórea no período 2000–2012.",
+    "Perda arbórea segundo o GFC não corresponde necessariamente a desmatamento.",
+    "Os limiares 10, 30 e 50 selecionam apenas pixels com treecover2000 igual ou superior a esse valor."
+  ]
+}

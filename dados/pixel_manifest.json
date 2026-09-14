@@ -1,0 +1,29 @@
+{
+  "titulo": "Camadas raster disponíveis",
+  "camadas": [
+    {
+      "id": "lossyear",
+      "nome": "Lossyear 2001–2025",
+      "arquivo": "GFC_RS_lossyear_2001_2025_FINAL.tif",
+      "descricao": "Ano da perda de cobertura arbórea por pixel."
+    },
+    {
+      "id": "treecover2000",
+      "nome": "Treecover 2000",
+      "arquivo": "GFC_RS_treecover2000_FINAL.tif",
+      "descricao": "Percentual de cobertura arbórea no ano 2000."
+    },
+    {
+      "id": "gain",
+      "nome": "Gain 2000–2012",
+      "arquivo": "GFC_RS_gain_FINAL.tif",
+      "descricao": "Ganho de cobertura arbórea no período 2000–2012."
+    },
+    {
+      "id": "rgb",
+      "nome": "Loss / Extent / Gain RGB",
+      "arquivo": "GFC_RS_Loss_Extent_Gain_RGB_FINAL.tif",
+      "descricao": "Composição visual Loss / Extent / Gain."
+    }
+  ]
+}
