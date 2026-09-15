@@ -116,7 +116,7 @@ function createMunicipalMapControls() {
                 value="reference"
                 selected
             >
-                Mapa de referência
+                Mapa de referência — OpenStreetMap
             </option>
 
             <option value="satellite">
@@ -982,7 +982,7 @@ function installBetterThresholdExplanation() {
                 box.innerHTML = `
 
                     <strong>
-                        Limiar ≥10% — cenário mais abrangente.
+                        Limiar ≥10% — cenário abrangente.
                     </strong>
 
                     Entram todos os pixels que possuíam
@@ -1014,7 +1014,7 @@ function installBetterThresholdExplanation() {
                 box.innerHTML = `
 
                     <strong>
-                        Limiar ≥30% — cenário intermediário.
+                        Limiar ≥30% — cenário principal.
                     </strong>
 
                     Entram somente pixels que possuíam
@@ -1023,6 +1023,22 @@ function installBetterThresholdExplanation() {
 
                     Um pixel com 20% fica de fora;
                     um pixel com 42% entra.
+
+                    <div class="gfc-simple-note">
+
+                        Este é o
+                        <strong>cenário principal do painel</strong>:
+                        um compromisso entre incluir cobertura
+                        arbórea mais aberta e concentrar a análise
+                        em pixels com presença arbórea inicial
+                        mais expressiva.
+
+                        Forest Loss continua representando
+                        <strong>perda de cobertura arbórea</strong>
+                        e não deve ser interpretado
+                        automaticamente como desmatamento.
+
+                    </div>
 
                     <span class="limiar-rule">
                         Regra:
@@ -1043,7 +1059,7 @@ function installBetterThresholdExplanation() {
                 box.innerHTML = `
 
                     <strong>
-                        Limiar ≥50% — cenário mais restritivo.
+                        Limiar ≥50% — cenário restritivo.
                     </strong>
 
                     Entram somente pixels nos quais
@@ -1273,4 +1289,219 @@ function initGFC4J() {
 // ============================================================
 
 initGFC4J();
+
+
+// ============================================================
+// GFC_THRESHOLD_LABELS_5H
+// ROTULAGEM DIDÁTICA DOS LIMIARES
+// ============================================================
+
+function applyGFCThresholdLabels5H() {
+
+    const labels = {
+
+        "10":
+            "≥ 10% — abrangente",
+
+        "30":
+            "≥ 30% — principal",
+
+        "50":
+            "≥ 50% — restritivo"
+
+    };
+
+
+    // ========================================================
+    // SELETORES
+    // ========================================================
+
+    [
+        "limiarSelect",
+        "pixelLimiarSelect"
+    ]
+    .forEach(
+        id => {
+
+            const select =
+                document.getElementById(
+                    id
+                );
+
+
+            if (
+                !select
+            ) {
+
+                return;
+
+            }
+
+
+            Array
+            .from(
+                select.options
+            )
+            .forEach(
+                option => {
+
+                    const value =
+                        String(
+                            option.value
+                        );
+
+
+                    if (
+                        labels[value]
+                    ) {
+
+                        option.textContent =
+                            labels[value];
+
+                    }
+
+                }
+            );
+
+        }
+    );
+
+
+    // ========================================================
+    // CARDS DE EXPLICAÇÃO
+    // ========================================================
+
+    const card10 =
+        document.querySelector(
+            '[data-threshold-help="10"] span'
+        );
+
+    const card30 =
+        document.querySelector(
+            '[data-threshold-help="30"] span'
+        );
+
+    const card50 =
+        document.querySelector(
+            '[data-threshold-help="50"] span'
+        );
+
+
+    if (
+        card10
+    ) {
+
+        card10.innerHTML = `
+
+            <strong>
+                Cenário abrangente.
+            </strong>
+
+            Inclui pixels com pelo menos
+            10% de cobertura arbórea em 2000.
+
+            É útil como análise de sensibilidade,
+            pois incorpora também coberturas
+            mais abertas e esparsas.
+
+        `;
+
+    }
+
+
+    if (
+        card30
+    ) {
+
+        card30.innerHTML = `
+
+            <strong>
+                Cenário principal.
+            </strong>
+
+            Inclui pixels com pelo menos
+            30% de cobertura arbórea em 2000.
+
+            É adotado como referência principal
+            para a leitura da perda de cobertura
+            florestal no painel.
+
+        `;
+
+    }
+
+
+    if (
+        card50
+    ) {
+
+        card50.innerHTML = `
+
+            <strong>
+                Cenário restritivo.
+            </strong>
+
+            Inclui somente pixels com pelo menos
+            50% de cobertura arbórea em 2000.
+
+            Concentra a leitura em áreas de
+            cobertura arbórea inicial mais densa.
+
+        `;
+
+    }
+
+
+    return Boolean(
+        document.getElementById(
+            "limiarSelect"
+        )
+        &&
+        document.getElementById(
+            "pixelLimiarSelect"
+        )
+    );
+
+}
+
+
+// ------------------------------------------------------------
+// Alguns elementos são construídos dinamicamente.
+// Por isso aguardamos até os dois seletores existirem.
+// ------------------------------------------------------------
+
+(function initThresholdLabels5H() {
+
+    let attempts =
+        0;
+
+
+    const timer =
+        setInterval(
+            () => {
+
+                attempts++;
+
+
+                const done =
+                    applyGFCThresholdLabels5H();
+
+
+                if (
+                    done
+                    ||
+                    attempts > 200
+                ) {
+
+                    clearInterval(
+                        timer
+                    );
+
+                }
+
+            },
+            100
+        );
+
+})();
 

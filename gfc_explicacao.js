@@ -714,9 +714,11 @@ function createMunicipalBasemapSelector() {
             <option
                 value="light"
                 selected
+
             >
-                Claro
+                Mapa de referência — OpenStreetMap
             </option>
+
 
             <option value="satellite">
                 Satélite
@@ -776,21 +778,15 @@ function initMunicipalBasemaps() {
         gfcMunicipalLightLayer =
             L.tileLayer(
 
-                (
-                    "https://{s}.basemaps."
-                    +
-                    "cartocdn.com/light_all/"
-                    +
-                    "{z}/{x}/{y}{r}.png"
-                ),
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
 
                 {
 
                     subdomains:
-                        "abcd",
+                        "abc",
 
                     maxZoom:
-                        20
+                        19
 
                 }
             );
@@ -980,7 +976,7 @@ function updateMunicipalBasemap() {
                 (
                     "© OpenStreetMap "
                     +
-                    "© CARTO"
+                    ""
                 );
 
         }
@@ -1083,7 +1079,7 @@ function enhancePixelBasemapSelector() {
 
 
         option.textContent =
-            "Mapa claro";
+            "Mapa de referência — OpenStreetMap";
 
 
         // colocar entre satélite e neutro
@@ -1145,24 +1141,18 @@ function installEnhancedPixelBasemap() {
         gfcPixelLightLayer =
             L.tileLayer(
 
-                (
-                    "https://{s}.basemaps."
-                    +
-                    "cartocdn.com/light_all/"
-                    +
-                    "{z}/{x}/{y}{r}.png"
-                ),
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
 
                 {
 
                     subdomains:
-                        "abcd",
+                        "abc",
 
                     maxZoom:
-                        20,
+                        19,
 
                     attribution:
-                        "© OpenStreetMap © CARTO"
+                        "© OpenStreetMap contributors"
 
                 }
             );
