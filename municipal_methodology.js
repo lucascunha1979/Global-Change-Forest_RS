@@ -184,6 +184,96 @@
         </div>
 
 
+
+        <!-- GFC_PIXEL_TO_MUNICIPIO_5I_START -->
+
+        <div class="pixel-to-municipality-explainer">
+
+            <span class="pixel-to-municipality-kicker">
+                DO RASTER AO POLÍGONO
+            </span>
+
+            <h3>
+                Como o mapa de pixels vira o mapa municipal?
+            </h3>
+
+            <p>
+
+                Imagine os limites de cada município
+                colocados sobre a grade de pixels do
+                Global Forest Change.
+
+                Primeiro identificamos, dentro de cada
+                limite municipal, os pixels que atendem
+                ao limiar de cobertura escolhido e que
+                registraram perda.
+
+                Depois calculamos a área real desses pixels
+                e somamos suas áreas.
+
+                Essa soma passa a ser o valor atribuído
+                ao município.
+
+            </p>
+
+
+            <div class="pixel-to-municipality-simple-flow">
+
+                <span>
+                    Pixels com perda
+                </span>
+
+                <b>
+                    →
+                </b>
+
+                <span>
+                    Cálculo da área dos pixels
+                </span>
+
+                <b>
+                    →
+                </b>
+
+                <span>
+                    Soma dentro do município
+                </span>
+
+                <b>
+                    →
+                </b>
+
+                <span>
+                    Cor do polígono municipal
+                </span>
+
+            </div>
+
+
+            <p class="pixel-to-municipality-note">
+
+                <strong>
+                    Importante:
+                </strong>
+
+                no mapa municipal, a cor do polígono
+                resume o valor calculado a partir dos
+                pixels existentes dentro daquele município.
+
+                Isso não significa que toda a área do
+                município apresentou perda de cobertura
+                arbórea.
+
+                Quando o painel está em percentual,
+                a área de perda acumulada é dividida pela
+                área territorial total do município.
+
+            </p>
+
+        </div>
+
+        <!-- GFC_PIXEL_TO_MUNICIPIO_5I_END -->
+
         <!-- ================================================= -->
         <!-- CARDS METODOLÓGICOS -->
         <!-- ================================================= -->
